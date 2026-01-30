@@ -1,3 +1,11 @@
+"""
+Greeting utility module.
+
+This module provides functions to greet a user,
+ask for user input, and repeat greetings multiple times.
+"""
+
+
 def greet(name: str) -> None:
     """Print a greeting message."""
     print(f"Hello, {name}!")
@@ -5,21 +13,22 @@ def greet(name: str) -> None:
 
 def ask_user_name() -> str:
     """Ask the user for their name and return it."""
-    name = input("Enter your name: ")
-    return name.strip()
+    user_input = input("Enter your name: ")
+    return user_input.strip()
 
 
 def greet_multiple_times(name: str, times: int = 1) -> None:
     """Greet the user multiple times."""
-    for i in range(times):
-        print(f"{i + 1}. Hello again, {name}!")
+    for count in range(times):
+        print(f"{count + 1}. Hello again, {name}!")
 
 
 def main() -> None:
+    """Main entry point of the program."""
     user_name = ask_user_name()
 
     if not user_name:
-        print("You did not enter a name.")
+        print("No name entered.")
         return
 
     greet(user_name)
